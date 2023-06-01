@@ -3,7 +3,7 @@ from typing import Dict, Generic, List, TypeVar
 
 from dcim.models import Device
 from django.conf import settings
-from ipam.models import IPAddress
+from ipam.models import IPAddress, Service
 from rest_framework import serializers
 from utilities.exceptions import AbortRequest
 from virtualization.models import VirtualMachine
@@ -57,4 +57,8 @@ class PrometheusDeviceSerializer(BasePrometheusSerializer[Device]):
 
 class PrometheusIPAddressSerializer(BasePrometheusSerializer[IPAddress]):
     settings_type = "ipaddress"
+    default_target_attr = "address"
+
+class PrometheusServerSerializer(BasePrometheusSerializer[IPAddress]):
+    settings_type = "service"
     default_target_attr = "address"

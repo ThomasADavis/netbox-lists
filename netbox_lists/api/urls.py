@@ -12,6 +12,7 @@ from .views import (
     PrometheusDeviceSD,
     PrometheusVirtualMachineSD,
     PrometheusIPAddressSD,
+    PrometheusServiceSD,
     ServiceListviewSet,
     TagsListViewSet,
     VirtualMachinesListViewSet,
@@ -35,6 +36,7 @@ router.register(
 router.register("prometheus-devices", PrometheusDeviceSD)
 router.register("prometheus-vms", PrometheusVirtualMachineSD)
 router.register("prometheus-ip-addresses", PrometheusIPAddressSD)
+router.register("prometheus-services", PrometheusServiceSD)
 
 router.register("devices-vms", DevicesVMsListViewSet)
 router.register("devices-vms-attrs", DevicesVMsAttrsListViewSet)

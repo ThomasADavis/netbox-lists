@@ -42,6 +42,7 @@ from .serializers import (
     PrometheusDeviceSerializer,
     PrometheusIPAddressSerializer,
     PrometheusVMSerializer,
+    PrometheusServiceSerializer,
 )
 from .utils import (
     device_vm_primary_list,
@@ -656,6 +657,14 @@ class PrometheusVirtualMachineSD(
     queryset = VirtualMachine.objects.filter()
     filterset_class = VirtualMachineFilterSet
     serializer_class = PrometheusVMSerializer
+
+
+class PrometheusServiceSD(
+    InvalidFilterCheckMixin, mixins.ListModelMixin, ListsBaseViewSet
+):
+    queryset = Service.objects.filter()
+    filterset_class = ServiceFilterSet
+    serializer_class = PrometheusServiceSerializer
 
 
 class PrometheusIPAddressSD(

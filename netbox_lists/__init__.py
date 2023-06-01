@@ -65,6 +65,11 @@ class ListsPluginConfig(PluginConfig):
             "__meta_netbox_dns_name": ("dns_name",),
             "__meta_netbox_status": ("status",),
         },
+        "prometheus_service_sd_target": (("address", "ip"),),
+        "prometheus_service_sd_labels": {
+            "__meta_netbox_id": ("id",),
+            "__meta_netbox_port": ("ports",),
+        },
     }
 
 
