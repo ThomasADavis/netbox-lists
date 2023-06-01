@@ -61,4 +61,3 @@ class PrometheusIPAddressSerializer(BasePrometheusSerializer[IPAddress]):
 
 class PrometheusServiceSerializer(BasePrometheusSerializer[IPAddress]):
     settings_type = "service"
-    default_target_attr = "address"
