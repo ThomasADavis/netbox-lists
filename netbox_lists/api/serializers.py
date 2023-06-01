@@ -28,6 +28,7 @@ class BasePrometheusSerializer(serializers.Serializer, Generic[T]):
             ((self.default_target_attr,),),
         ):
             target = get_attr(attrs, device)
+            print(target)
             if target is not None:
                 return [str(target)]
 
